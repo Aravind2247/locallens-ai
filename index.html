@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocalLens AI: be the business AI recommends</title>
+<meta name="description" content="An AI visibility agency for local businesses. We check what ChatGPT and Perplexity say about you, fix the gaps and report the change.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔎%3C/text%3E%3C/svg%3E">
+<style>
+:root{--paper:#f2f5f3;--card:#fff;--ink:#102a2c;--mute:#51666a;--line:#d3dedb;--acc:#2f45d8;--accink:#fff;--mark:#ffe14d;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--paper:#0e1b1d;--card:#15272a;--ink:#e8f1ee;--mute:#9db3b3;--line:#27403f;--acc:#8fa0ff;--accink:#0e1b1d;--mark:#c9a800;color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Iowan Old Style",Palatino,Georgia,serif;line-height:1.15;margin:0}
+a{color:var(--acc)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px;gap:12px}
+.brand{font-family:Georgia,serif;font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+.btn{display:inline-block;background:var(--acc);color:var(--accink);border:0;border-radius:8px;padding:12px 20px;font:600 1rem system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+section{padding:64px 0}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:-.02em}
+.hero p{color:var(--mute);max-width:46ch;margin:18px 0 26px}
+.answer{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.answer small{color:var(--mute)}
+.q{font-weight:600;margin:6px 0 12px}
+.answer ol{margin:0 0 12px;padding-left:22px}
+.slot{border:2px dashed var(--mute);border-radius:10px;padding:12px;background:linear-gradient(var(--mark),var(--mark)) 0 0/6px 100% no-repeat;padding-left:18px}
+h2{font-size:clamp(1.7rem,3.5vw,2.3rem);margin-bottom:12px}
+.lead{color:var(--mute);max-width:60ch;margin:0 0 28px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0;margin:0;list-style:none;counter-reset:s}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;counter-increment:s}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--acc);color:var(--accink);font-weight:700;margin-bottom:10px}
+.steps h3{font-size:1.2rem;margin-bottom:6px}
+.steps p{margin:0;color:var(--mute)}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+label{display:block;font-weight:600;font-size:.9rem;margin-bottom:4px}
+input{width:100%;padding:12px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit}
+.field{flex:1;min-width:200px}
+#out ol{padding-left:22px}
+#out li{margin:4px 0}
+.hint{color:var(--mute);font-size:.92rem}
+.team{display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px;padding:0;margin:0;list-style:none}
+.team li{padding:14px 0;border-top:1px solid var(--line)}
+.team b{display:block}
+.team span{color:var(--mute);font-size:.95rem}
+.note{border-left:4px solid var(--mark);padding:6px 16px;background:var(--card);border-radius:0 8px 8px 0;max-width:68ch}
+form.audit{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:720px}
+form.audit .full{grid-column:1/-1}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:.9rem}
+@media (max-width:760px){.hero,.steps,.team,form.audit{grid-template-columns:1fr}section{padding:44px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="#top">LocalLens AI</a><a class="btn" href="#audit">Request a free audit</a></div></header>
+<main id="top">
+<section><div class="wrap hero">
+<div>
+<h1>When a customer asks an AI where to go, are you in the answer?</h1>
+<p>More people now ask ChatGPT or Perplexity for a bakery, a dentist or a plumber and get two or three names back. We check whether yours is one of them, fix what is getting in the way, and report the change every week.</p>
+<a class="btn" href="#audit">Request a free audit</a> <a class="btn alt" href="#check">Try the starter check</a>
+</div>
+<div class="answer" aria-label="Illustrative example of an AI answer">
+<small>Illustrative example, not a real AI response</small>
+<div class="q">“Best bakery for a birthday cake in town?”</div>
+<ol><li>Crumb &amp; Co.</li><li>Flour Street Bakery</li></ol>
+<div class="slot"><b>Your bakery</b><br><span class="hint">Not mentioned. The customer never sees you.</span></div>
+</div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<h2>How we work</h2>
+<p class="lead">Three steps, repeated every week. We measure first, so you can see what changed.</p>
+<ol class="steps">
+<li><h3>Audit</h3><p>We ask AI engines the questions real customers ask, and record whether you appear, what is said about you and who is named instead.</p></li>
+<li><h3>Fix</h3><p>We make your details match everywhere, make your website easy for AI to read, and publish helpful answers to your customers’ real questions.</p></li>
+<li><h3>Report</h3><p>We repeat the same questions and send a short report in plain language: where you appear now, and the next three actions.</p></li>
+</ol>
+</div></section>
+
+<section id="check"><div class="wrap">
+<h2>Try the starter check</h2>
+<p class="lead">Enter your type of business and your city. You get ten questions customers might ask an AI. Paste each into ChatGPT or Perplexity and note whether your business is named.</p>
+<div class="tool">
+<div class="row">
+<div class="field"><label for="biz">Type of business</label><input id="biz" placeholder="for example: bakery" maxlength="40"></div>
+<div class="field"><label for="city">City</label><input id="city" placeholder="for example: Riga" maxlength="40"></div>
+</div>
+<button class="btn" id="gen" type="button">Make my ten questions</button>
+<div id="out" aria-live="polite"></div>
+</div>
+</div></section>
+
+<section id="team"><div class="wrap">
+<h2>The team behind it</h2>
+<p class="lead">Eight AI employees do the repetitive work. One human reviews everything before it goes anywhere.</p>
+<ul class="team">
+<li><b>Project Manager</b><span>Reads every other employee’s log, records each task in our shared ledger and emails a daily brief.</span></li>
+<li><b>Lead Researcher</b><span>Studies your business and competitors, sets your positioning and keeps the weekly scoreboard.</span></li>
+<li><b>AI-Visibility Auditor and Writer</b><span>Runs the AI-answer audit and drafts the helpful articles and FAQ pages.</span></li>
+<li><b>Performance Analyst</b><span>Reads the numbers, flags what is stuck and prepares small local ad ideas for approval.</span></li>
+<li><b>Campaign Builder</b><span>Drafts weekly posts in your voice and plans the posting schedule.</span></li>
+<li><b>Technical Auditor</b><span>Checks your website for errors, unreadable pages and missing details.</span></li>
+<li><b>Support Triage</b><span>Sorts incoming messages, drafts replies and flags unhappy customers.</span></li>
+<li><b>Outbound Strategist</b><span>Finds nearby businesses that need this and drafts the first message for review.</span></li>
+</ul>
+</div></section>
+
+<section><div class="wrap">
+<p class="note"><b>What we do not promise.</b> Nobody controls what an AI says, and answers change from day to day. We promise careful measurement, steady work and honest reporting. Nothing is sent or published without a human approving it.</p>
+</div></section>
+
+<section id="audit"><div class="wrap">
+<h2>Request a free audit</h2>
+<p class="lead">Tell us about your business. This opens your email app with the details filled in, so you can review them before sending.</p>
+<form class="audit" id="af">
+<div><label for="b2">Business name</label><input id="b2" required maxlength="80"></div>
+<div><label for="w2">Website</label><input id="w2" placeholder="https://" maxlength="120"></div>
+<div><label for="c2">City</label><input id="c2" required maxlength="60"></div>
+<div><label for="e2">Your email</label><input id="e2" type="email" required maxlength="100"></div>
+<div class="full"><button class="btn" type="submit">Prepare my request</button> <span class="hint" id="af-msg" role="status"></span></div>
+</form>
+</div></section>
+</main>
+<footer><div class="wrap">LocalLens AI is a university project. Examples on this page are illustrative. Please do not enter sensitive personal information.</div></footer>
+<script>
+(function(){
+var CONTACT_EMAIL="YOUR@EMAIL.COM"; // change this to your own address
+function $(i){return document.getElementById(i);}
+$("gen").addEventListener("click",function(){
+var b=$("biz").value.trim(),c=$("city").value.trim(),o=$("out");
+o.textContent="";
+if(!b||!c){o.appendChild(Object.assign(document.createElement("p"),{className:"hint",textContent:"Enter both a business type and a city."}));return;}
+var qs=["Best "+b+" in "+c,b+" near me in "+c,"Who is the most recommended "+b+" in "+c+"?","Affordable "+b+" in "+c,b+" in "+c+" open on Sunday","Top rated "+b+" in "+c+" for families","Which "+b+" in "+c+" do locals recommend?",b+" in "+c+" with good reviews","New "+b+" in "+c+" worth trying","What should I look for when choosing a "+b+" in "+c+"?"];
+var ol=document.createElement("ol");
+qs.forEach(function(q){var li=document.createElement("li");li.textContent=q;ol.appendChild(li);});
+var p=document.createElement("p");p.className="hint";p.textContent="Ask each one in ChatGPT or Perplexity. Count how many answers name your business. Repeat in a month to see the change.";
+var cp=document.createElement("button");cp.className="btn alt";cp.type="button";cp.textContent="Copy the list";
+cp.addEventListener("click",function(){try{navigator.clipboard.writeText(qs.join("\n")).then(function(){cp.textContent="Copied";});}catch(e){cp.textContent="Copy not available";}});
+o.appendChild(ol);o.appendChild(p);o.appendChild(cp);
+});
+$("af").addEventListener("submit",function(e){
+e.preventDefault();
+var m=$("af-msg");
+if(CONTACT_EMAIL==="your-email@example.com"){m.textContent="The site owner has not set a contact email yet.";return;}
+var body="Business: "+$("b2").value+"\nWebsite: "+$("w2").value+"\nCity: "+$("c2").value+"\nReply to: "+$("e2").value;
+location.href="mailto:"+CONTACT_EMAIL+"?subject="+encodeURIComponent("Free AI visibility audit request")+"&body="+encodeURIComponent(body);
+m.textContent="Your email app should open now.";
+});
+})();
+</script>
+</body>
+</html>
